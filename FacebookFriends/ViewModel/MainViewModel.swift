@@ -9,11 +9,13 @@
 import Foundation
 class MainViewModel {
     private var apiService = UserApiService()
+    var userList = [Person]()
     weak var delegate: MainViewModelProtocol?
     func fetchUsers(){
         apiService.fetch(type: Results.self, url: URL(string: Keys.urlString)) { response in
             switch response {
             case .success(let success):
+                self.userList = success.results
                 self.delegate?.updateUiWithUsers(success.results)
             case .failure(let failure):
                 self.delegate?.fetchError(failure.localizedDescription)
