@@ -11,9 +11,11 @@ class MainViewController: UIViewController {
     private var mainViewModel = MainViewModel()
     private lazy var mainTableView: UITableView = {
         let tableView = UITableView()
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.register(UserCustomCellView.self, forCellReuseIdentifier: UserCustomCellView.identifier)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.allowsSelection = false
+        tableView.bounces = false
+        tableView.estimatedRowHeight = 100
         return tableView
     }()
     override func viewDidLoad() {
@@ -66,10 +68,15 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = mainTableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = mainViewModel.userList[indexPath.row].name.first
+        let cell = mainTableView.dequeueReusableCell(withIdentifier: UserCustomCellView.identifier, for: indexPath) as! UserCustomCellView
+        cell.setImage(mainViewModel.userList[indexPath.row].picture.medium)
         return cell
     }
-    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
     
 }
