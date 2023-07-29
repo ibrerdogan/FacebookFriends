@@ -52,8 +52,10 @@
 		7FFB57E42A74F1E000D528D5 /* FacebookFriends */ = {
 			isa = PBXGroup;
 			children = (
+				7FFB57FC2A74FA3B00D528D5 /* ViewModel */,
+				7FFB57FB2A74FA3400D528D5 /* View */,
+				7FFB57FA2A74FA2900D528D5 /* Model */,
 				7FFB57F92A74F2C700D528D5 /* Common */,
-				7FFB57E92A74F1E000D528D5 /* LoginViewController.swift */,
 				7FFB57EE2A74F1E200D528D5 /* Assets.xcassets */,
 				7FFB57F32A74F1E200D528D5 /* Info.plist */,
 			);
@@ -67,6 +69,28 @@
 				7FFB57E72A74F1E000D528D5 /* SceneDelegate.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		7FFB57FA2A74FA2900D528D5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7FFB57FB2A74FA3400D528D5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7FFB57E92A74F1E000D528D5 /* LoginViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7FFB57FC2A74FA3B00D528D5 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
