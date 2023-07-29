@@ -58,8 +58,8 @@ class LoginViewController: UIViewController {
         }
     }
     private func configureCallbacks(){
-        loginViewModel.loginSuccess = { islogined in
-            print("login")
+        loginViewModel.loginSuccess = { [weak self] islogined in
+            self?.navigationController?.pushViewController(MainViewController(), animated: true)
         }
         
         loginViewModel.loginFailed = {[weak self] alertMessge in

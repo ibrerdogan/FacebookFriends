@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7FD6AE0F2A7577A0003ACB40 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD6AE0E2A7577A0003ACB40 /* LoginViewModel.swift */; };
+		7FD6AE132A758413003ACB40 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD6AE122A758413003ACB40 /* MainViewController.swift */; };
 		7FFB57E62A74F1E000D528D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFB57E52A74F1E000D528D5 /* AppDelegate.swift */; };
 		7FFB57E82A74F1E000D528D5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFB57E72A74F1E000D528D5 /* SceneDelegate.swift */; };
 		7FFB57EA2A74F1E000D528D5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFB57E92A74F1E000D528D5 /* LoginViewController.swift */; };
@@ -17,6 +18,7 @@
 
 /* Begin PBXFileReference section */
 		7FD6AE0E2A7577A0003ACB40 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		7FD6AE122A758413003ACB40 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		7FFB57E22A74F1E000D528D5 /* FacebookFriends.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FacebookFriends.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FFB57E52A74F1E000D528D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7FFB57E72A74F1E000D528D5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				7FFB57E92A74F1E000D528D5 /* LoginViewController.swift */,
+				7FD6AE122A758413003ACB40 /* MainViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -179,6 +182,7 @@
 				7FFB57FF2A75006100D528D5 /* SharedExtensions.swift in Sources */,
 				7FFB57EA2A74F1E000D528D5 /* LoginViewController.swift in Sources */,
 				7FFB57E62A74F1E000D528D5 /* AppDelegate.swift in Sources */,
+				7FD6AE132A758413003ACB40 /* MainViewController.swift in Sources */,
 				7FD6AE0F2A7577A0003ACB40 /* LoginViewModel.swift in Sources */,
 				7FFB57E82A74F1E000D528D5 /* SceneDelegate.swift in Sources */,
 			);
