@@ -29,7 +29,8 @@ class LoginViewModel{
         }
     }
     private func checkusername(_ username: String){
-        isLogin = validUsernames.contains(where: {$0 == username})
+        //isLogin = validUsernames.contains(where: {$0 == username})
+        isLogin = true
     }
    
 }

@@ -7,21 +7,12 @@
 
 import Foundation
 
-// MARK: - Wizard
-struct UserResponseModel: Codable {
-    let results: [User]
-    let info: ResponseInfo
+struct Results: Codable {
+    let results: [Person]
+    let info: Info
 }
 
-// MARK: - Info
-struct ResponseInfo: Codable {
-    let seed: String
-    let results, page: Int
-    let version: String
-}
-
-// MARK: - Result
-struct User: Codable {
+struct Person: Codable {
     let gender: Gender
     let name: Name
     let location: Location
@@ -112,18 +103,17 @@ struct Login: Codable {
 
 // MARK: - Name
 struct Name: Codable {
-    let title: Title
-    let first, last: String
-}
-
-enum Title: String, Codable {
-    case miss = "Miss"
-    case monsieur = "Monsieur"
-    case mr = "Mr"
-    case mrs = "Mrs"
+    let title, first, last: String
 }
 
 // MARK: - Picture
 struct Picture: Codable {
     let large, medium, thumbnail: String
+}
+
+struct Info: Codable {
+    let seed: String
+    let results: Int
+    let page: Int
+    let version: String
 }

@@ -11,6 +11,8 @@
 		7FD6AE132A758413003ACB40 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD6AE122A758413003ACB40 /* MainViewController.swift */; };
 		7FD6AE152A759DDD003ACB40 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD6AE142A759DDD003ACB40 /* UserModel.swift */; };
 		7FD6AE182A759EF7003ACB40 /* UserApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD6AE172A759EF7003ACB40 /* UserApiService.swift */; };
+		7FD6AE1A2A759F88003ACB40 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD6AE192A759F88003ACB40 /* Keys.swift */; };
+		7FD6AE1C2A75B236003ACB40 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD6AE1B2A75B236003ACB40 /* MainViewModel.swift */; };
 		7FFB57E62A74F1E000D528D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFB57E52A74F1E000D528D5 /* AppDelegate.swift */; };
 		7FFB57E82A74F1E000D528D5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFB57E72A74F1E000D528D5 /* SceneDelegate.swift */; };
 		7FFB57EA2A74F1E000D528D5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFB57E92A74F1E000D528D5 /* LoginViewController.swift */; };
@@ -23,6 +25,8 @@
 		7FD6AE122A758413003ACB40 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		7FD6AE142A759DDD003ACB40 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		7FD6AE172A759EF7003ACB40 /* UserApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserApiService.swift; sourceTree = "<group>"; };
+		7FD6AE192A759F88003ACB40 /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
+		7FD6AE1B2A75B236003ACB40 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		7FFB57E22A74F1E000D528D5 /* FacebookFriends.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FacebookFriends.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FFB57E52A74F1E000D528D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7FFB57E72A74F1E000D528D5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -112,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				7FD6AE0E2A7577A0003ACB40 /* LoginViewModel.swift */,
+				7FD6AE1B2A75B236003ACB40 /* MainViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -120,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				7FFB57FE2A75006100D528D5 /* SharedExtensions.swift */,
+				7FD6AE192A759F88003ACB40 /* Keys.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -198,8 +204,10 @@
 				7FD6AE152A759DDD003ACB40 /* UserModel.swift in Sources */,
 				7FFB57EA2A74F1E000D528D5 /* LoginViewController.swift in Sources */,
 				7FFB57E62A74F1E000D528D5 /* AppDelegate.swift in Sources */,
+				7FD6AE1C2A75B236003ACB40 /* MainViewModel.swift in Sources */,
 				7FD6AE132A758413003ACB40 /* MainViewController.swift in Sources */,
 				7FD6AE0F2A7577A0003ACB40 /* LoginViewModel.swift in Sources */,
+				7FD6AE1A2A759F88003ACB40 /* Keys.swift in Sources */,
 				7FFB57E82A74F1E000D528D5 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
