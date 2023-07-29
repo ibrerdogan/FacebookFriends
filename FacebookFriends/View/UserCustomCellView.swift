@@ -16,6 +16,20 @@ class UserCustomCellView: UITableViewCell {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
+    private lazy var usernameLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont.systemFont(ofSize: 20)
+        label.numberOfLines = 0
+        return label
+    }()
+    private lazy var userFullNameLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont.systemFont(ofSize: 16)
+        label.numberOfLines = 0
+        return label
+    }()
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         addViewComponents()
@@ -28,13 +42,23 @@ class UserCustomCellView: UITableViewCell {
     
     private func addViewComponents(){
         addSubview(profilePictureImage)
+        addSubview(usernameLabel)
+        addSubview(userFullNameLabel)
     }
     private func configureViewComponents(){
         NSLayoutConstraint.activate([
             profilePictureImage.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 20),
             profilePictureImage.centerYAnchor.constraint(equalTo: centerYAnchor),
             profilePictureImage.heightAnchor.constraint(equalToConstant: 90),
-            profilePictureImage.widthAnchor.constraint(equalToConstant: 90)
+            profilePictureImage.widthAnchor.constraint(equalToConstant: 90),
+            usernameLabel.topAnchor.constraint(equalTo: profilePictureImage.topAnchor, constant: 15),
+            usernameLabel.leadingAnchor.constraint(equalTo: profilePictureImage.trailingAnchor, constant: 10),
+            usernameLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
+            
+            userFullNameLabel.topAnchor.constraint(equalTo: usernameLabel.bottomAnchor, constant: 5),
+            userFullNameLabel.leadingAnchor.constraint(equalTo: usernameLabel.leadingAnchor),
+            userFullNameLabel.trailingAnchor.constraint(equalTo: usernameLabel.trailingAnchor),
+            
         ])
     }
     func setImage(_ imageUrl: String){
@@ -51,5 +75,9 @@ class UserCustomCellView: UITableViewCell {
                 .transition(.fade(1)),
                 .cacheOriginalImage
             ])
+    }
+    func setUserName(_ username: String,_ fullname: Name){
+        usernameLabel.text = username
+        userFullNameLabel.text = fullname.title + " " + fullname.first + " " + fullname.last
     }
 }
