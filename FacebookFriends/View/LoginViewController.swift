@@ -8,7 +8,7 @@
 import UIKit
 
 class LoginViewController: UIViewController {
-
+    private var loginViewModel = LoginViewModel()
     private lazy var loginFormContainerStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
@@ -33,6 +33,7 @@ class LoginViewController: UIViewController {
     private lazy var loginButton: UIButton = {
         let button = UIButton()
         button.createCustomButton("Login")
+        button.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
         return button
     }()
     override func viewDidLoad() {
@@ -40,7 +41,7 @@ class LoginViewController: UIViewController {
         view.backgroundColor = .white
         addViewComponents()
         configureViewComponents()
-        
+        configureCallbacks()
     }
     private func addViewComponents(){
         view.addSubview(loginFormContainerStackView)
@@ -55,6 +56,30 @@ class LoginViewController: UIViewController {
         [usernameTextField,passwordTextField,loginButton].forEach { view in
             loginFormContainerStackView.addArrangedSubview(view)
         }
+    }
+    private func configureCallbacks(){
+        loginViewModel.loginSuccess = { islogined in
+            print("login")
+        }
+        
+        loginViewModel.loginFailed = {[weak self] alertMessge in
+            self?.showAlert(alertMessge)
+        }
+       
+    }
+    @objc func loginButtonTapped(){
+        guard let username = usernameTextField.text, let password = passwordTextField.text else {return}
+        loginViewModel.loginUser(username, password)
+    }
+
+}
+
+extension LoginViewController{
+    func showAlert(_ alertMessage: String) {
+        let alertController = UIAlertController(title: "Error", message: alertMessage, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "Ok", style: .default)
+        alertController.addAction(okAction)
+        present(alertController, animated: true, completion: nil)
     }
 
 }
