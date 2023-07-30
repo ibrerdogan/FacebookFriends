@@ -9,34 +9,43 @@ import UIKit
 
 class PersonelContactInfoView: UIView {
 
+    private lazy var contactIcon: UIImageView = {
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.image = UIImage(systemName: "phone.fill.connection")?.withTintColor(.black, renderingMode: .alwaysOriginal)
+        imageView.heightAnchor.constraint(equalToConstant: 25).isActive = true
+        imageView.widthAnchor.constraint(equalToConstant: 25).isActive = true
+        return imageView
+    }()
     private lazy var contactInfoLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Contact Information"
+        label.font = UIFont.boldSystemFont(ofSize: 20)
         return label
     }()
     private lazy var userCountryLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Contact Information"
+        label.numberOfLines = 1
         return label
     }()
     private lazy var userAdressLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Contact Information"
+        label.numberOfLines = 2
         return label
     }()
     private lazy var userPhoneNumberLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Contact Information"
+        label.numberOfLines = 1
         return label
     }()
     private lazy var userMailLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Contact Information"
+        label.numberOfLines = 1
         return label
     }()
     
@@ -53,6 +62,7 @@ class PersonelContactInfoView: UIView {
     }
     
     private func addViewComponents(){
+        addSubview(contactIcon)
         addSubview(contactInfoLabel)
         addSubview(userCountryLabel)
         addSubview(userAdressLabel)
@@ -62,17 +72,24 @@ class PersonelContactInfoView: UIView {
     }
     private func configureViewComponents(){
         NSLayoutConstraint.activate([
-            contactInfoLabel.topAnchor.constraint(equalTo: topAnchor, constant: 5),
-            contactInfoLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
+            contactIcon.topAnchor.constraint(equalTo: topAnchor, constant: 5),
+            contactIcon.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 8),
+            
+            contactInfoLabel.centerYAnchor.constraint(equalTo: contactIcon.centerYAnchor),
+            contactInfoLabel.leadingAnchor.constraint(equalTo: contactIcon.trailingAnchor, constant: 8),
             
             userCountryLabel.topAnchor.constraint(equalTo: contactInfoLabel.bottomAnchor, constant: 8),
             userCountryLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
+            userCountryLabel.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -10),
             userAdressLabel.topAnchor.constraint(equalTo: userCountryLabel.bottomAnchor, constant: 5),
             userAdressLabel.leadingAnchor.constraint(equalTo: userCountryLabel.leadingAnchor),
+            userAdressLabel.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -10),
             userPhoneNumberLabel.topAnchor.constraint(equalTo: userAdressLabel.bottomAnchor, constant: 5),
             userPhoneNumberLabel.leadingAnchor.constraint(equalTo: userCountryLabel.leadingAnchor),
+            userPhoneNumberLabel.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -10),
             userMailLabel.topAnchor.constraint(equalTo: userPhoneNumberLabel.bottomAnchor,constant: 5),
             userMailLabel.leadingAnchor.constraint(equalTo: userCountryLabel.leadingAnchor),
+            userMailLabel.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -10),
             bottomAnchor.constraint(equalTo: userMailLabel.bottomAnchor, constant: 5),
         ])
     }
