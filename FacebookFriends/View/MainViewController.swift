@@ -12,8 +12,6 @@ class MainViewController: UIViewController {
     private lazy var progressIndicator: UIActivityIndicatorView = {
         let indicator = UIActivityIndicatorView()
         indicator.translatesAutoresizingMaskIntoConstraints = false
-        indicator.backgroundColor = .gray
-        indicator.tintColor = .blue
         return indicator
     }()
     private lazy var mainTableView: UITableView = {
