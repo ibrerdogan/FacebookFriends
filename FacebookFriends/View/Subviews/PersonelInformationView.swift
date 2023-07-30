@@ -9,25 +9,37 @@ import UIKit
 
 class PersonelInformationView: UIView {
 
+    private lazy var personalIcon: UIImageView = {
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.image = UIImage(systemName: "person.crop.circle")?.withTintColor(.black, renderingMode: .alwaysOriginal)
+        imageView.heightAnchor.constraint(equalToConstant: 25).isActive = true
+        imageView.widthAnchor.constraint(equalToConstant: 25).isActive = true
+        return imageView
+    }()
     private lazy var personelInfoLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont.boldSystemFont(ofSize: 20)
         label.text = "Personel Information"
         return label
     }()
     private lazy var userFullNameLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.numberOfLines = 1
         return label
     }()
     private lazy var userAgeAndGenderLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.numberOfLines = 1
         return label
     }()
     private lazy var userBirthDateLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.numberOfLines = 1
         return label
     }()
     
@@ -43,6 +55,7 @@ class PersonelInformationView: UIView {
     
     private func addViewComponents(){
         addSubview(personelInfoLabel)
+        addSubview(personalIcon)
         addSubview(userFullNameLabel)
         addSubview(userAgeAndGenderLabel)
         addSubview(userBirthDateLabel)
@@ -50,15 +63,21 @@ class PersonelInformationView: UIView {
     }
     private func configureViewComponents(){
         NSLayoutConstraint.activate([
-            personelInfoLabel.topAnchor.constraint(equalTo: topAnchor, constant: 5),
-            personelInfoLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
+            
+            personalIcon.topAnchor.constraint(equalTo: topAnchor, constant: 5),
+            personalIcon.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
+            personelInfoLabel.centerYAnchor.constraint(equalTo: personalIcon.centerYAnchor),
+            personelInfoLabel.leadingAnchor.constraint(equalTo: personalIcon.trailingAnchor, constant: 8),
             
             userFullNameLabel.topAnchor.constraint(equalTo: personelInfoLabel.bottomAnchor, constant: 8),
             userFullNameLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
+            userFullNameLabel.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -10),
             userAgeAndGenderLabel.topAnchor.constraint(equalTo: userFullNameLabel.bottomAnchor, constant: 5),
             userAgeAndGenderLabel.leadingAnchor.constraint(equalTo: userFullNameLabel.leadingAnchor),
+            userAgeAndGenderLabel.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -10),
             userBirthDateLabel.topAnchor.constraint(equalTo: userAgeAndGenderLabel.bottomAnchor, constant: 5),
             userBirthDateLabel.leadingAnchor.constraint(equalTo: userFullNameLabel.leadingAnchor),
+            userBirthDateLabel.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -10),
             bottomAnchor.constraint(equalTo: userBirthDateLabel.bottomAnchor, constant: 5),
         ])
     }
