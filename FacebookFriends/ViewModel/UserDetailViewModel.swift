@@ -11,7 +11,7 @@ class UserDetailViewModel {
     func formatPersonForUI(_ user: Person){
         let username = "@" + user.login.username
         let fullName = user.name.title + " " + user.name.first + " " + user.name.last
-        let userAgeAndGender = user.gender.rawValue + "\(user.dob.age)"
+        let userAgeAndGender = user.gender.rawValue + " / \(user.dob.age)"
         let userBirthDate = user.dob.date
         let imageUrl = user.picture.large
         let userCountry = user.location.country
@@ -20,7 +20,7 @@ class UserDetailViewModel {
         let userAdress = user.location.state + " " + user.location.city + " " + user.location.street.name + " \(user.location.street.number)"
         delegate?.updatePersonelInfo(personelInformation(fullName: fullName,
                                                          userAgeAndGender: userAgeAndGender,
-                                                         userBirthDate: userBirthDate))
+                                                         userBirthDate: userBirthDate.formatDate(userBirthDate)))
         delegate?.updateContactInfo(contactInformation(userCountry: userCountry,
                                                        userAdress: userAdress,
                                                        userPhoneNumber: userPhoneNumber,

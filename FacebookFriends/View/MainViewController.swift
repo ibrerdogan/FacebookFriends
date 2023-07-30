@@ -32,8 +32,8 @@ class MainViewController: UIViewController {
     private func configureViewComponents(){
         NSLayoutConstraint.activate([
             mainTableView.topAnchor.constraint(equalTo: view.topAnchor),
-            mainTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            mainTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            mainTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor,constant: 5),
+            mainTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor,constant: -5),
             mainTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
     }
@@ -70,6 +70,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource{
         let cell = mainTableView.dequeueReusableCell(withIdentifier: UserCustomCellView.identifier, for: indexPath) as! UserCustomCellView
         cell.configureCell(mainViewModel.userList[indexPath.row])
         cell.setupShadow()
+        cell.selectionStyle = .none
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
