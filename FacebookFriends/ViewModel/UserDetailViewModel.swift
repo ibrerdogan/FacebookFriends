@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import MapKit
 class UserDetailViewModel {
     weak var delegate: UserDetailViewModelDelegate?
     func formatPersonForUI(_ user: Person){
@@ -26,14 +27,24 @@ class UserDetailViewModel {
                                                        userPhoneNumber: userPhoneNumber,
                                                        userMail: userMail))
         delegate?.updateUI(username: username,
-                           imageUrl: imageUrl)
+                           imageUrl: imageUrl,
+                           userLocation: createUserLocation(latitute: user.location.coordinates.latitude,
+                                                            longitute: user.location.coordinates.longitude))
         
+       
+    }
+    
+    func createUserLocation(latitute: String, longitute: String) -> CLLocationCoordinate2D{
+        let latitute = Double(latitute) ?? 0
+        let longitute = Double(longitute) ?? 0
+        return CLLocationCoordinate2D(latitude: latitute,
+                                            longitude: longitute)
        
     }
 }
 
 protocol UserDetailViewModelDelegate: AnyObject{
-    func updateUI(username: String, imageUrl: String)
+    func updateUI(username: String, imageUrl: String, userLocation: CLLocationCoordinate2D)
     func updatePersonelInfo(_ personelInfo: personelInformation)
     func updateContactInfo(_ contactInfo : contactInformation)
 }
