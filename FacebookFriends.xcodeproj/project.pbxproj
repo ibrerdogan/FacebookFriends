@@ -16,6 +16,13 @@
 		7FD6AE1E2A75BB8E003ACB40 /* UserCustomCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD6AE1D2A75BB8E003ACB40 /* UserCustomCellView.swift */; };
 		7FD6AE202A75BBE6003ACB40 /* UserCustomCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD6AE1F2A75BBE6003ACB40 /* UserCustomCellViewModel.swift */; };
 		7FD6AE232A75BD7C003ACB40 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 7FD6AE222A75BD7C003ACB40 /* Kingfisher */; };
+		7FD6AE252A767444003ACB40 /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD6AE242A767444003ACB40 /* UserDetailViewController.swift */; };
+		7FD6AE282A7680EA003ACB40 /* PersonelInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD6AE272A7680EA003ACB40 /* PersonelInformationView.swift */; };
+		7FD6AE2A2A76853F003ACB40 /* PersonelContactInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD6AE292A76853F003ACB40 /* PersonelContactInfoView.swift */; };
+		7FD6AE2E2A7686A8003ACB40 /* UserDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD6AE2D2A7686A8003ACB40 /* UserDetailViewModel.swift */; };
+		7FD6AE352A76B48B003ACB40 /* UserRealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD6AE342A76B48B003ACB40 /* UserRealmModel.swift */; };
+		7FD6AE382A76B695003ACB40 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 7FD6AE372A76B695003ACB40 /* Realm */; };
+		7FD6AE3A2A76B695003ACB40 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 7FD6AE392A76B695003ACB40 /* RealmSwift */; };
 		7FFB57E62A74F1E000D528D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFB57E52A74F1E000D528D5 /* AppDelegate.swift */; };
 		7FFB57E82A74F1E000D528D5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFB57E72A74F1E000D528D5 /* SceneDelegate.swift */; };
 		7FFB57EA2A74F1E000D528D5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFB57E92A74F1E000D528D5 /* LoginViewController.swift */; };
@@ -32,6 +39,11 @@
 		7FD6AE1B2A75B236003ACB40 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		7FD6AE1D2A75BB8E003ACB40 /* UserCustomCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCustomCellView.swift; sourceTree = "<group>"; };
 		7FD6AE1F2A75BBE6003ACB40 /* UserCustomCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCustomCellViewModel.swift; sourceTree = "<group>"; };
+		7FD6AE242A767444003ACB40 /* UserDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewController.swift; sourceTree = "<group>"; };
+		7FD6AE272A7680EA003ACB40 /* PersonelInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonelInformationView.swift; sourceTree = "<group>"; };
+		7FD6AE292A76853F003ACB40 /* PersonelContactInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonelContactInfoView.swift; sourceTree = "<group>"; };
+		7FD6AE2D2A7686A8003ACB40 /* UserDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewModel.swift; sourceTree = "<group>"; };
+		7FD6AE342A76B48B003ACB40 /* UserRealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRealmModel.swift; sourceTree = "<group>"; };
 		7FFB57E22A74F1E000D528D5 /* FacebookFriends.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FacebookFriends.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FFB57E52A74F1E000D528D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7FFB57E72A74F1E000D528D5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -46,6 +58,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FD6AE3A2A76B695003ACB40 /* RealmSwift in Frameworks */,
+				7FD6AE382A76B695003ACB40 /* Realm in Frameworks */,
 				7FD6AE232A75BD7C003ACB40 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -59,6 +73,15 @@
 				7FD6AE172A759EF7003ACB40 /* UserApiService.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		7FD6AE262A7680B8003ACB40 /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				7FD6AE272A7680EA003ACB40 /* PersonelInformationView.swift */,
+				7FD6AE292A76853F003ACB40 /* PersonelContactInfoView.swift */,
+			);
+			path = Subviews;
 			sourceTree = "<group>";
 		};
 		7FFB57D92A74F1E000D528D5 = {
@@ -105,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				7FD6AE142A759DDD003ACB40 /* UserModel.swift */,
+				7FD6AE342A76B48B003ACB40 /* UserRealmModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -112,9 +136,11 @@
 		7FFB57FB2A74FA3400D528D5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				7FD6AE262A7680B8003ACB40 /* Subviews */,
 				7FFB57E92A74F1E000D528D5 /* LoginViewController.swift */,
 				7FD6AE122A758413003ACB40 /* MainViewController.swift */,
 				7FD6AE1D2A75BB8E003ACB40 /* UserCustomCellView.swift */,
+				7FD6AE242A767444003ACB40 /* UserDetailViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -125,6 +151,7 @@
 				7FD6AE0E2A7577A0003ACB40 /* LoginViewModel.swift */,
 				7FD6AE1B2A75B236003ACB40 /* MainViewModel.swift */,
 				7FD6AE1F2A75BBE6003ACB40 /* UserCustomCellViewModel.swift */,
+				7FD6AE2D2A7686A8003ACB40 /* UserDetailViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -156,6 +183,8 @@
 			name = FacebookFriends;
 			packageProductDependencies = (
 				7FD6AE222A75BD7C003ACB40 /* Kingfisher */,
+				7FD6AE372A76B695003ACB40 /* Realm */,
+				7FD6AE392A76B695003ACB40 /* RealmSwift */,
 			);
 			productName = FacebookFriends;
 			productReference = 7FFB57E22A74F1E000D528D5 /* FacebookFriends.app */;
@@ -187,6 +216,7 @@
 			mainGroup = 7FFB57D92A74F1E000D528D5;
 			packageReferences = (
 				7FD6AE212A75BD7C003ACB40 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				7FD6AE362A76B695003ACB40 /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = 7FFB57E32A74F1E000D528D5 /* Products */;
 			projectDirPath = "";
@@ -214,12 +244,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				7FFB57FF2A75006100D528D5 /* SharedExtensions.swift in Sources */,
+				7FD6AE282A7680EA003ACB40 /* PersonelInformationView.swift in Sources */,
+				7FD6AE2E2A7686A8003ACB40 /* UserDetailViewModel.swift in Sources */,
 				7FD6AE182A759EF7003ACB40 /* UserApiService.swift in Sources */,
+				7FD6AE252A767444003ACB40 /* UserDetailViewController.swift in Sources */,
+				7FD6AE2A2A76853F003ACB40 /* PersonelContactInfoView.swift in Sources */,
 				7FD6AE202A75BBE6003ACB40 /* UserCustomCellViewModel.swift in Sources */,
 				7FD6AE1E2A75BB8E003ACB40 /* UserCustomCellView.swift in Sources */,
 				7FD6AE152A759DDD003ACB40 /* UserModel.swift in Sources */,
 				7FFB57EA2A74F1E000D528D5 /* LoginViewController.swift in Sources */,
 				7FFB57E62A74F1E000D528D5 /* AppDelegate.swift in Sources */,
+				7FD6AE352A76B48B003ACB40 /* UserRealmModel.swift in Sources */,
 				7FD6AE1C2A75B236003ACB40 /* MainViewModel.swift in Sources */,
 				7FD6AE132A758413003ACB40 /* MainViewController.swift in Sources */,
 				7FD6AE0F2A7577A0003ACB40 /* LoginViewModel.swift in Sources */,
@@ -433,6 +468,14 @@
 				minimumVersion = 7.0.0;
 			};
 		};
+		7FD6AE362A76B695003ACB40 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.41.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -440,6 +483,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 7FD6AE212A75BD7C003ACB40 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		7FD6AE372A76B695003ACB40 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7FD6AE362A76B695003ACB40 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		7FD6AE392A76B695003ACB40 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7FD6AE362A76B695003ACB40 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

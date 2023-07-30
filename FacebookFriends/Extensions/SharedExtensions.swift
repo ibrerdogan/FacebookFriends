@@ -7,7 +7,7 @@
 
 import Foundation
 import UIKit
-
+import Kingfisher
 extension UITextField{
     func createUsernameField(_ placeholder: String?,isSecureField: Bool){
         backgroundColor = .white
@@ -42,5 +42,38 @@ extension UIView{
         layer.shadowRadius = 4
         layer.shadowPath = UIBezierPath(rect: bounds).cgPath
         layer.masksToBounds = false
+    }
+}
+
+extension UIImageView{
+    func setUrlImage(_ imageUrl: String,imageSize: CGSize){
+        let url = URL(string: imageUrl)
+        let processor = DownsamplingImageProcessor(size: CGSize(width: imageSize.width, height: imageSize.height))
+        |> RoundCornerImageProcessor(cornerRadius: imageSize.height / 2)
+        self.kf.indicatorType = .activity
+        self.kf.setImage(
+            with: url,
+            placeholder: UIImage(named: "placeholderImage"),
+            options: [
+                .processor(processor),
+                .scaleFactor(UIScreen.main.scale),
+                .transition(.fade(1)),
+                .cacheOriginalImage
+            ])
+    }
+}
+
+extension String{
+    func formatDate(_ dateString: String) -> String {
+        let inputFormatter = DateFormatter()
+        inputFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+        
+        if let date = inputFormatter.date(from: dateString) {
+            let outputFormatter = DateFormatter()
+            outputFormatter.dateFormat = "dd/MMM/yyyy"
+            return outputFormatter.string(from: date)
+        } else {
+            return dateString
+        }
     }
 }

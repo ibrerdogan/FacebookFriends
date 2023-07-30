@@ -20,22 +20,22 @@ class UserCustomCellView: UITableViewCell {
     private lazy var usernameLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 20)
-        label.numberOfLines = 0
+        label.font = UIFont.boldSystemFont(ofSize: 20)
+        label.numberOfLines = 1
         return label
     }()
     private lazy var userFullNameLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 16)
-        label.numberOfLines = 0
+        label.numberOfLines = 1
         return label
     }()
     private lazy var userCountryLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 16)
-        label.numberOfLines = 0
+        label.font = UIFont.italicSystemFont(ofSize: 14)
+        label.numberOfLines = 1
         return label
     }()
     private lazy var rightIcon: UIImageView = {
@@ -72,15 +72,15 @@ class UserCustomCellView: UITableViewCell {
             profilePictureImage.widthAnchor.constraint(equalToConstant: 90),
             usernameLabel.topAnchor.constraint(equalTo: profilePictureImage.topAnchor, constant: 15),
             usernameLabel.leadingAnchor.constraint(equalTo: profilePictureImage.trailingAnchor, constant: 10),
-            usernameLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
+            usernameLabel.trailingAnchor.constraint(equalTo: rightIcon.leadingAnchor),
             
             userFullNameLabel.topAnchor.constraint(equalTo: usernameLabel.bottomAnchor, constant: 5),
             userFullNameLabel.leadingAnchor.constraint(equalTo: usernameLabel.leadingAnchor),
-            userFullNameLabel.trailingAnchor.constraint(equalTo: usernameLabel.trailingAnchor),
+            userFullNameLabel.trailingAnchor.constraint(equalTo: rightIcon.leadingAnchor),
             
             userCountryLabel.topAnchor.constraint(equalTo: userFullNameLabel.bottomAnchor,constant: 5),
             userCountryLabel.leadingAnchor.constraint(equalTo: usernameLabel.leadingAnchor),
-            userCountryLabel.trailingAnchor.constraint(equalTo: usernameLabel.trailingAnchor),
+            userCountryLabel.trailingAnchor.constraint(equalTo: rightIcon.leadingAnchor),
             
             rightIcon.centerYAnchor.constraint(equalTo: profilePictureImage.centerYAnchor),
             rightIcon.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
@@ -89,31 +89,16 @@ class UserCustomCellView: UITableViewCell {
             
         ])
     }
-   private func setImage(_ imageUrl: String){
-        let url = URL(string: imageUrl)
-        let processor = DownsamplingImageProcessor(size: CGSize(width: 90, height: 90))
-                     |> RoundCornerImageProcessor(cornerRadius: 45)
-        profilePictureImage.kf.indicatorType = .activity
-        profilePictureImage.kf.setImage(
-            with: url,
-            placeholder: UIImage(named: "placeholderImage"),
-            options: [
-                .processor(processor),
-                .scaleFactor(UIScreen.main.scale),
-                .transition(.fade(1)),
-                .cacheOriginalImage
-            ])
-    }
     func configureCell(_ user: Person){
         userCustomCellViewModel.formatPersonForUI(user)
     }
 }
 extension UserCustomCellView: UserCustomCellViewModelDelegate{
     func updateUI(_ username: String, _ fullName: String, _ locationString: String, _ imageUrl: String) {
-        usernameLabel.text = username
+        usernameLabel.text = "@"+username
         userFullNameLabel.text = fullName
         userCountryLabel.text = locationString
-        setImage(imageUrl)
+        profilePictureImage.setUrlImage(imageUrl, imageSize: CGSize(width: 90, height: 90))
     }
     
     
