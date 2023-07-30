@@ -73,6 +73,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource{
         cell.setUserName(mainViewModel.userList[indexPath.row].login.username,
                          mainViewModel.userList[indexPath.row].name,
                          mainViewModel.userList[indexPath.row].location)
+        cell.setupShadow()
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

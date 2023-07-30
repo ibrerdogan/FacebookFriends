@@ -37,6 +37,13 @@ class UserCustomCellView: UITableViewCell {
         label.numberOfLines = 0
         return label
     }()
+    private lazy var rightIcon: UIImageView = {
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.image = UIImage(systemName: "chevron.right")
+        imageView.tintColor = .black
+        return imageView
+    }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -53,6 +60,7 @@ class UserCustomCellView: UITableViewCell {
         addSubview(usernameLabel)
         addSubview(userFullNameLabel)
         addSubview(userCountryLabel)
+        addSubview(rightIcon)
     }
     private func configureViewComponents(){
         NSLayoutConstraint.activate([
@@ -70,7 +78,12 @@ class UserCustomCellView: UITableViewCell {
             
             userCountryLabel.topAnchor.constraint(equalTo: userFullNameLabel.bottomAnchor,constant: 5),
             userCountryLabel.leadingAnchor.constraint(equalTo: usernameLabel.leadingAnchor),
-            userCountryLabel.trailingAnchor.constraint(equalTo: usernameLabel.trailingAnchor)
+            userCountryLabel.trailingAnchor.constraint(equalTo: usernameLabel.trailingAnchor),
+            
+            rightIcon.centerYAnchor.constraint(equalTo: profilePictureImage.centerYAnchor),
+            rightIcon.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+            rightIcon.heightAnchor.constraint(equalToConstant: 25),
+            rightIcon.widthAnchor.constraint(equalToConstant: 25)
             
         ])
     }

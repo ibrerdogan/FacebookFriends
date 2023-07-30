@@ -33,3 +33,14 @@ extension UIButton{
         layer.cornerRadius = 10
     }
 }
+
+extension UIView{
+    func setupShadow() {
+        layer.shadowColor = UIColor.black.cgColor
+        layer.shadowOpacity = 0.5
+        layer.shadowOffset = CGSize(width: 2, height: 2)
+        layer.shadowRadius = 4
+        layer.shadowPath = UIBezierPath(rect: bounds).cgPath
+        layer.masksToBounds = false
+    }
+}
