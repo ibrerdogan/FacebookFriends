@@ -30,6 +30,14 @@ class UserCustomCellView: UITableViewCell {
         label.numberOfLines = 0
         return label
     }()
+    private lazy var userCountryLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont.systemFont(ofSize: 16)
+        label.numberOfLines = 0
+        return label
+    }()
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         addViewComponents()
@@ -44,6 +52,7 @@ class UserCustomCellView: UITableViewCell {
         addSubview(profilePictureImage)
         addSubview(usernameLabel)
         addSubview(userFullNameLabel)
+        addSubview(userCountryLabel)
     }
     private func configureViewComponents(){
         NSLayoutConstraint.activate([
@@ -58,6 +67,10 @@ class UserCustomCellView: UITableViewCell {
             userFullNameLabel.topAnchor.constraint(equalTo: usernameLabel.bottomAnchor, constant: 5),
             userFullNameLabel.leadingAnchor.constraint(equalTo: usernameLabel.leadingAnchor),
             userFullNameLabel.trailingAnchor.constraint(equalTo: usernameLabel.trailingAnchor),
+            
+            userCountryLabel.topAnchor.constraint(equalTo: userFullNameLabel.bottomAnchor,constant: 5),
+            userCountryLabel.leadingAnchor.constraint(equalTo: usernameLabel.leadingAnchor),
+            userCountryLabel.trailingAnchor.constraint(equalTo: usernameLabel.trailingAnchor)
             
         ])
     }
@@ -76,8 +89,9 @@ class UserCustomCellView: UITableViewCell {
                 .cacheOriginalImage
             ])
     }
-    func setUserName(_ username: String,_ fullname: Name){
+    func setUserName(_ username: String,_ fullname: Name,_ location: Location){
         usernameLabel.text = username
         userFullNameLabel.text = fullname.title + " " + fullname.first + " " + fullname.last
+        userCountryLabel.text = location.city+"/"+location.country
     }
 }
