@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		7FD6AE0F2A7577A0003ACB40 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD6AE0E2A7577A0003ACB40 /* LoginViewModel.swift */; };
+		7FD6AE132A758413003ACB40 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD6AE122A758413003ACB40 /* MainViewController.swift */; };
+		7FD6AE152A759DDD003ACB40 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD6AE142A759DDD003ACB40 /* UserModel.swift */; };
+		7FD6AE182A759EF7003ACB40 /* UserApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD6AE172A759EF7003ACB40 /* UserApiService.swift */; };
+		7FD6AE1A2A759F88003ACB40 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD6AE192A759F88003ACB40 /* Keys.swift */; };
+		7FD6AE1C2A75B236003ACB40 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD6AE1B2A75B236003ACB40 /* MainViewModel.swift */; };
+		7FD6AE1E2A75BB8E003ACB40 /* UserCustomCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD6AE1D2A75BB8E003ACB40 /* UserCustomCellView.swift */; };
+		7FD6AE202A75BBE6003ACB40 /* UserCustomCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD6AE1F2A75BBE6003ACB40 /* UserCustomCellViewModel.swift */; };
+		7FD6AE232A75BD7C003ACB40 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 7FD6AE222A75BD7C003ACB40 /* Kingfisher */; };
 		7FFB57E62A74F1E000D528D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFB57E52A74F1E000D528D5 /* AppDelegate.swift */; };
 		7FFB57E82A74F1E000D528D5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFB57E72A74F1E000D528D5 /* SceneDelegate.swift */; };
 		7FFB57EA2A74F1E000D528D5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFB57E92A74F1E000D528D5 /* LoginViewController.swift */; };
@@ -17,6 +25,13 @@
 
 /* Begin PBXFileReference section */
 		7FD6AE0E2A7577A0003ACB40 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		7FD6AE122A758413003ACB40 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		7FD6AE142A759DDD003ACB40 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		7FD6AE172A759EF7003ACB40 /* UserApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserApiService.swift; sourceTree = "<group>"; };
+		7FD6AE192A759F88003ACB40 /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
+		7FD6AE1B2A75B236003ACB40 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		7FD6AE1D2A75BB8E003ACB40 /* UserCustomCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCustomCellView.swift; sourceTree = "<group>"; };
+		7FD6AE1F2A75BBE6003ACB40 /* UserCustomCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCustomCellViewModel.swift; sourceTree = "<group>"; };
 		7FFB57E22A74F1E000D528D5 /* FacebookFriends.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FacebookFriends.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FFB57E52A74F1E000D528D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7FFB57E72A74F1E000D528D5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -31,12 +46,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FD6AE232A75BD7C003ACB40 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7FD6AE162A759EE4003ACB40 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				7FD6AE172A759EF7003ACB40 /* UserApiService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		7FFB57D92A74F1E000D528D5 = {
 			isa = PBXGroup;
 			children = (
@@ -56,6 +80,7 @@
 		7FFB57E42A74F1E000D528D5 /* FacebookFriends */ = {
 			isa = PBXGroup;
 			children = (
+				7FD6AE162A759EE4003ACB40 /* Service */,
 				7FFB57FD2A75004F00D528D5 /* Extensions */,
 				7FFB57FC2A74FA3B00D528D5 /* ViewModel */,
 				7FFB57FB2A74FA3400D528D5 /* View */,
@@ -79,6 +104,7 @@
 		7FFB57FA2A74FA2900D528D5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				7FD6AE142A759DDD003ACB40 /* UserModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -87,6 +113,8 @@
 			isa = PBXGroup;
 			children = (
 				7FFB57E92A74F1E000D528D5 /* LoginViewController.swift */,
+				7FD6AE122A758413003ACB40 /* MainViewController.swift */,
+				7FD6AE1D2A75BB8E003ACB40 /* UserCustomCellView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -95,6 +123,8 @@
 			isa = PBXGroup;
 			children = (
 				7FD6AE0E2A7577A0003ACB40 /* LoginViewModel.swift */,
+				7FD6AE1B2A75B236003ACB40 /* MainViewModel.swift */,
+				7FD6AE1F2A75BBE6003ACB40 /* UserCustomCellViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -103,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				7FFB57FE2A75006100D528D5 /* SharedExtensions.swift */,
+				7FD6AE192A759F88003ACB40 /* Keys.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -123,6 +154,9 @@
 			dependencies = (
 			);
 			name = FacebookFriends;
+			packageProductDependencies = (
+				7FD6AE222A75BD7C003ACB40 /* Kingfisher */,
+			);
 			productName = FacebookFriends;
 			productReference = 7FFB57E22A74F1E000D528D5 /* FacebookFriends.app */;
 			productType = "com.apple.product-type.application";
@@ -151,6 +185,9 @@
 				Base,
 			);
 			mainGroup = 7FFB57D92A74F1E000D528D5;
+			packageReferences = (
+				7FD6AE212A75BD7C003ACB40 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = 7FFB57E32A74F1E000D528D5 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -177,9 +214,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				7FFB57FF2A75006100D528D5 /* SharedExtensions.swift in Sources */,
+				7FD6AE182A759EF7003ACB40 /* UserApiService.swift in Sources */,
+				7FD6AE202A75BBE6003ACB40 /* UserCustomCellViewModel.swift in Sources */,
+				7FD6AE1E2A75BB8E003ACB40 /* UserCustomCellView.swift in Sources */,
+				7FD6AE152A759DDD003ACB40 /* UserModel.swift in Sources */,
 				7FFB57EA2A74F1E000D528D5 /* LoginViewController.swift in Sources */,
 				7FFB57E62A74F1E000D528D5 /* AppDelegate.swift in Sources */,
+				7FD6AE1C2A75B236003ACB40 /* MainViewModel.swift in Sources */,
+				7FD6AE132A758413003ACB40 /* MainViewController.swift in Sources */,
 				7FD6AE0F2A7577A0003ACB40 /* LoginViewModel.swift in Sources */,
+				7FD6AE1A2A759F88003ACB40 /* Keys.swift in Sources */,
 				7FFB57E82A74F1E000D528D5 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -379,6 +423,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7FD6AE212A75BD7C003ACB40 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7FD6AE222A75BD7C003ACB40 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7FD6AE212A75BD7C003ACB40 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7FFB57DA2A74F1E000D528D5 /* Project object */;
 }
