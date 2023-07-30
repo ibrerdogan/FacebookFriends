@@ -89,21 +89,6 @@ class UserCustomCellView: UITableViewCell {
             
         ])
     }
-   private func setImage(_ imageUrl: String){
-        let url = URL(string: imageUrl)
-        let processor = DownsamplingImageProcessor(size: CGSize(width: 90, height: 90))
-                     |> RoundCornerImageProcessor(cornerRadius: 45)
-        profilePictureImage.kf.indicatorType = .activity
-        profilePictureImage.kf.setImage(
-            with: url,
-            placeholder: UIImage(named: "placeholderImage"),
-            options: [
-                .processor(processor),
-                .scaleFactor(UIScreen.main.scale),
-                .transition(.fade(1)),
-                .cacheOriginalImage
-            ])
-    }
     func configureCell(_ user: Person){
         userCustomCellViewModel.formatPersonForUI(user)
     }
@@ -113,7 +98,7 @@ extension UserCustomCellView: UserCustomCellViewModelDelegate{
         usernameLabel.text = username
         userFullNameLabel.text = fullName
         userCountryLabel.text = locationString
-        setImage(imageUrl)
+        profilePictureImage.setUrlImage(imageUrl, imageSize: CGSize(width: 90, height: 90))
     }
     
     

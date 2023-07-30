@@ -13,7 +13,6 @@ class MainViewController: UIViewController {
         let tableView = UITableView()
         tableView.register(UserCustomCellView.self, forCellReuseIdentifier: UserCustomCellView.identifier)
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.allowsSelection = false
         tableView.bounces = false
         tableView.estimatedRowHeight = 100
         return tableView
@@ -78,6 +77,9 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource{
     }
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        navigationController?.pushViewController(UserDetailViewController(user: mainViewModel.userList[indexPath.row]), animated: true)
     }
     
 }
