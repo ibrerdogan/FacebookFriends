@@ -16,6 +16,7 @@
 		7FD6AE1E2A75BB8E003ACB40 /* UserCustomCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD6AE1D2A75BB8E003ACB40 /* UserCustomCellView.swift */; };
 		7FD6AE202A75BBE6003ACB40 /* UserCustomCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD6AE1F2A75BBE6003ACB40 /* UserCustomCellViewModel.swift */; };
 		7FD6AE232A75BD7C003ACB40 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 7FD6AE222A75BD7C003ACB40 /* Kingfisher */; };
+		7FD6AE252A767444003ACB40 /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD6AE242A767444003ACB40 /* UserDetailViewController.swift */; };
 		7FFB57E62A74F1E000D528D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFB57E52A74F1E000D528D5 /* AppDelegate.swift */; };
 		7FFB57E82A74F1E000D528D5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFB57E72A74F1E000D528D5 /* SceneDelegate.swift */; };
 		7FFB57EA2A74F1E000D528D5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFB57E92A74F1E000D528D5 /* LoginViewController.swift */; };
@@ -32,6 +33,7 @@
 		7FD6AE1B2A75B236003ACB40 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		7FD6AE1D2A75BB8E003ACB40 /* UserCustomCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCustomCellView.swift; sourceTree = "<group>"; };
 		7FD6AE1F2A75BBE6003ACB40 /* UserCustomCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCustomCellViewModel.swift; sourceTree = "<group>"; };
+		7FD6AE242A767444003ACB40 /* UserDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewController.swift; sourceTree = "<group>"; };
 		7FFB57E22A74F1E000D528D5 /* FacebookFriends.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FacebookFriends.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FFB57E52A74F1E000D528D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7FFB57E72A74F1E000D528D5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 				7FFB57E92A74F1E000D528D5 /* LoginViewController.swift */,
 				7FD6AE122A758413003ACB40 /* MainViewController.swift */,
 				7FD6AE1D2A75BB8E003ACB40 /* UserCustomCellView.swift */,
+				7FD6AE242A767444003ACB40 /* UserDetailViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -215,6 +218,7 @@
 			files = (
 				7FFB57FF2A75006100D528D5 /* SharedExtensions.swift in Sources */,
 				7FD6AE182A759EF7003ACB40 /* UserApiService.swift in Sources */,
+				7FD6AE252A767444003ACB40 /* UserDetailViewController.swift in Sources */,
 				7FD6AE202A75BBE6003ACB40 /* UserCustomCellViewModel.swift in Sources */,
 				7FD6AE1E2A75BB8E003ACB40 /* UserCustomCellView.swift in Sources */,
 				7FD6AE152A759DDD003ACB40 /* UserModel.swift in Sources */,
