@@ -11,6 +11,7 @@ import Kingfisher
 
 class UserCustomCellView: UITableViewCell {
     static let identifier = "UserCustomCellView"
+    private var userCustomCellViewModel = UserCustomCellViewModel()
     private lazy var profilePictureImage: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -49,6 +50,7 @@ class UserCustomCellView: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         addViewComponents()
         configureViewComponents()
+        userCustomCellViewModel.delegate = self
     }
     
     required init?(coder: NSCoder) {
@@ -87,7 +89,7 @@ class UserCustomCellView: UITableViewCell {
             
         ])
     }
-    func setImage(_ imageUrl: String){
+   private func setImage(_ imageUrl: String){
         let url = URL(string: imageUrl)
         let processor = DownsamplingImageProcessor(size: CGSize(width: 90, height: 90))
                      |> RoundCornerImageProcessor(cornerRadius: 45)
@@ -102,9 +104,17 @@ class UserCustomCellView: UITableViewCell {
                 .cacheOriginalImage
             ])
     }
-    func setUserName(_ username: String,_ fullname: Name,_ location: Location){
-        usernameLabel.text = username
-        userFullNameLabel.text = fullname.title + " " + fullname.first + " " + fullname.last
-        userCountryLabel.text = location.city+"/"+location.country
+    func configureCell(_ user: Person){
+        userCustomCellViewModel.formatPersonForUI(user)
     }
+}
+extension UserCustomCellView: UserCustomCellViewModelDelegate{
+    func updateUI(_ username: String, _ fullName: String, _ locationString: String, _ imageUrl: String) {
+        usernameLabel.text = username
+        userFullNameLabel.text = fullName
+        userCountryLabel.text = locationString
+        setImage(imageUrl)
+    }
+    
+    
 }

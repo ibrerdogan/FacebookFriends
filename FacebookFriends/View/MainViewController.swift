@@ -69,10 +69,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = mainTableView.dequeueReusableCell(withIdentifier: UserCustomCellView.identifier, for: indexPath) as! UserCustomCellView
-        cell.setImage(mainViewModel.userList[indexPath.row].picture.medium)
-        cell.setUserName(mainViewModel.userList[indexPath.row].login.username,
-                         mainViewModel.userList[indexPath.row].name,
-                         mainViewModel.userList[indexPath.row].location)
+        cell.configureCell(mainViewModel.userList[indexPath.row])
         cell.setupShadow()
         return cell
     }
