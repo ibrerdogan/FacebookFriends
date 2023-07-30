@@ -9,17 +9,26 @@ import Foundation
 import UIKit
 class MainViewController: UIViewController {
     private var mainViewModel = MainViewModel()
+    private lazy var progressIndicator: UIActivityIndicatorView = {
+        let indicator = UIActivityIndicatorView()
+        indicator.translatesAutoresizingMaskIntoConstraints = false
+        indicator.backgroundColor = .gray
+        indicator.tintColor = .blue
+        return indicator
+    }()
     private lazy var mainTableView: UITableView = {
         let tableView = UITableView()
         tableView.register(UserCustomCellView.self, forCellReuseIdentifier: UserCustomCellView.identifier)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.bounces = false
         tableView.estimatedRowHeight = 100
+        tableView.isHidden = true
         return tableView
     }()
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
+        progressIndicator.startAnimating()
         mainViewModel.fetchUsers()
         addViewComponents()
         configureViewComponents()
@@ -28,9 +37,14 @@ class MainViewController: UIViewController {
     }
     private func addViewComponents(){
         view.addSubview(mainTableView)
+        view.addSubview(progressIndicator)
     }
     private func configureViewComponents(){
         NSLayoutConstraint.activate([
+            progressIndicator.topAnchor.constraint(equalTo: view.topAnchor),
+            progressIndicator.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            progressIndicator.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            progressIndicator.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             mainTableView.topAnchor.constraint(equalTo: view.topAnchor),
             mainTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor,constant: 5),
             mainTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor,constant: -5),
@@ -51,12 +65,15 @@ class MainViewController: UIViewController {
 extension MainViewController: MainViewModelProtocol{
     func updateUiWithUsers(_ users: [Person]) {
         DispatchQueue.main.async {[weak self] in
+            self?.progressIndicator.removeFromSuperview()
+            self?.mainTableView.isHidden = false
             self?.mainTableView.reloadData()
         }
     }
     
     func fetchError(_ errorMessage: String) {
-        print(errorMessage)
+        progressIndicator.removeFromSuperview()
+        showAlert(errorMessage)
     }
     
 }
@@ -83,4 +100,12 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource{
         navigationController?.pushViewController(UserDetailViewController(user: mainViewModel.userList[indexPath.row]), animated: true)
     }
     
+}
+extension MainViewController{
+    func showAlert(_ alertMessage: String) {
+        let alertController = UIAlertController(title: "Error", message: alertMessage, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "Ok", style: .default)
+        alertController.addAction(okAction)
+        present(alertController, animated: true, completion: nil)
+    }
 }
