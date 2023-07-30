@@ -7,6 +7,8 @@
 
 
 import Foundation
+import Realm
+import RealmSwift
 class MainViewModel {
     private var apiService = UserApiService()
     var userList = [Person]()
@@ -15,11 +17,30 @@ class MainViewModel {
         apiService.fetch(type: Results.self, url: URL(string: Keys.urlString)) { response in
             switch response {
             case .success(let success):
-                self.userList = success.results
-                self.delegate?.updateUiWithUsers(success.results)
+               self.saveUsersToRealm(success.results)
+               self.userList = success.results
+               self.delegate?.updateUiWithUsers(success.results)
             case .failure(let failure):
+                self.getUsersFromRealm()
                 self.delegate?.fetchError(failure.localizedDescription)
             }
+        }
+    }
+    private func saveUsersToRealm(_ users: [Person]){
+        let realm = try! Realm()
+        let realmModel = RealmModel(users: users)
+        try! realm.write {
+            realm.add(realmModel)
+        }
+    }
+    
+    private func getUsersFromRealm() {
+        let realm = try! Realm()
+        if let todos = realm.objects(RealmModel.self).first{
+            for i in todos.users{
+                userList.append(i.toNoneRealmObject())
+            }
+            delegate?.updateUiWithUsers(userList)
         }
     }
 }
