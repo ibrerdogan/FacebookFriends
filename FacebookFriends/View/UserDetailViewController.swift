@@ -9,6 +9,8 @@ import UIKit
 
 class UserDetailViewController: UIViewController {
 
+    var user: Person
+    var userDetailViewModel = UserDetailViewModel()
     private lazy var userImage: UIImageView = {
        let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -16,7 +18,6 @@ class UserDetailViewController: UIViewController {
     }()
     private lazy var usernameLabel: UILabel = {
         let label = UILabel()
-        label.text = "Contact Information"
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -36,6 +37,16 @@ class UserDetailViewController: UIViewController {
         view.layer.borderWidth = 1
         return view
     }()
+    init(user: Person){
+        self.user = user
+        super.init(nibName: nil, bundle: nil)
+        userDetailViewModel.delegate = self
+        userDetailViewModel.formatPersonForUI(self.user)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -50,7 +61,7 @@ class UserDetailViewController: UIViewController {
     }
     private func configureViewComponents(){
         NSLayoutConstraint.activate([
-            userImage.topAnchor.constraint(equalTo: view.topAnchor, constant: 30),
+            userImage.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30),
             userImage.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             userImage.heightAnchor.constraint(equalToConstant: 120),
             userImage.widthAnchor.constraint(equalToConstant: 120),
@@ -69,5 +80,23 @@ class UserDetailViewController: UIViewController {
             
         ])
     }
+    
+}
+
+extension UserDetailViewController: UserDetailViewModelDelegate {
+    func updateUI(username: String, imageUrl: String) {
+        usernameLabel.text = username
+        userImage.setUrlImage(imageUrl, imageSize: CGSize(width: 120, height: 120))
+    }
+    
+    func updateContactInfo(_ contactInfo: contactInformation) {
+        contactInfoView.configureView(contactInfo)
+    }
+    
+    
+    func updatePersonelInfo(_ personelInfo: personelInformation) {
+        personelInfoView.configureView(personelInfo)
+    }
+    
     
 }

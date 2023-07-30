@@ -79,7 +79,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource{
         return 100
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        navigationController?.pushViewController(UserDetailViewController(), animated: true)
+        navigationController?.pushViewController(UserDetailViewController(user: mainViewModel.userList[indexPath.row]), animated: true)
     }
     
 }

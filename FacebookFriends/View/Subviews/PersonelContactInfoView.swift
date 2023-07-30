@@ -76,4 +76,10 @@ class PersonelContactInfoView: UIView {
             bottomAnchor.constraint(equalTo: userMailLabel.bottomAnchor, constant: 5),
         ])
     }
+    func configureView(_ contactInfo: contactInformation){
+        userCountryLabel.text = contactInfo.userCountry
+        userAdressLabel.text = contactInfo.userAdress
+        userPhoneNumberLabel.text = contactInfo.userPhoneNumber
+        userMailLabel.text = contactInfo.userMail
+    }
 }

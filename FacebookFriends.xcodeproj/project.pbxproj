@@ -19,6 +19,7 @@
 		7FD6AE252A767444003ACB40 /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD6AE242A767444003ACB40 /* UserDetailViewController.swift */; };
 		7FD6AE282A7680EA003ACB40 /* PersonelInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD6AE272A7680EA003ACB40 /* PersonelInformationView.swift */; };
 		7FD6AE2A2A76853F003ACB40 /* PersonelContactInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD6AE292A76853F003ACB40 /* PersonelContactInfoView.swift */; };
+		7FD6AE2E2A7686A8003ACB40 /* UserDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD6AE2D2A7686A8003ACB40 /* UserDetailViewModel.swift */; };
 		7FFB57E62A74F1E000D528D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFB57E52A74F1E000D528D5 /* AppDelegate.swift */; };
 		7FFB57E82A74F1E000D528D5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFB57E72A74F1E000D528D5 /* SceneDelegate.swift */; };
 		7FFB57EA2A74F1E000D528D5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFB57E92A74F1E000D528D5 /* LoginViewController.swift */; };
@@ -38,6 +39,7 @@
 		7FD6AE242A767444003ACB40 /* UserDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewController.swift; sourceTree = "<group>"; };
 		7FD6AE272A7680EA003ACB40 /* PersonelInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonelInformationView.swift; sourceTree = "<group>"; };
 		7FD6AE292A76853F003ACB40 /* PersonelContactInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonelContactInfoView.swift; sourceTree = "<group>"; };
+		7FD6AE2D2A7686A8003ACB40 /* UserDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewModel.swift; sourceTree = "<group>"; };
 		7FFB57E22A74F1E000D528D5 /* FacebookFriends.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FacebookFriends.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FFB57E52A74F1E000D528D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7FFB57E72A74F1E000D528D5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 				7FD6AE0E2A7577A0003ACB40 /* LoginViewModel.swift */,
 				7FD6AE1B2A75B236003ACB40 /* MainViewModel.swift */,
 				7FD6AE1F2A75BBE6003ACB40 /* UserCustomCellViewModel.swift */,
+				7FD6AE2D2A7686A8003ACB40 /* UserDetailViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -232,6 +235,7 @@
 			files = (
 				7FFB57FF2A75006100D528D5 /* SharedExtensions.swift in Sources */,
 				7FD6AE282A7680EA003ACB40 /* PersonelInformationView.swift in Sources */,
+				7FD6AE2E2A7686A8003ACB40 /* UserDetailViewModel.swift in Sources */,
 				7FD6AE182A759EF7003ACB40 /* UserApiService.swift in Sources */,
 				7FD6AE252A767444003ACB40 /* UserDetailViewController.swift in Sources */,
 				7FD6AE2A2A76853F003ACB40 /* PersonelContactInfoView.swift in Sources */,

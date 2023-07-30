@@ -17,29 +17,24 @@ class PersonelInformationView: UIView {
     }()
     private lazy var userFullNameLabel: UILabel = {
         let label = UILabel()
-        label.text = "Contact Information"
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     private lazy var userAgeAndGenderLabel: UILabel = {
         let label = UILabel()
-        label.text = "Contact Information"
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     private lazy var userBirthDateLabel: UILabel = {
         let label = UILabel()
-        label.text = "Contact Information"
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
         addViewComponents()
         configureViewComponents()
-        
     }
     
     required init?(coder: NSCoder) {
@@ -66,6 +61,11 @@ class PersonelInformationView: UIView {
             userBirthDateLabel.leadingAnchor.constraint(equalTo: userFullNameLabel.leadingAnchor),
             bottomAnchor.constraint(equalTo: userBirthDateLabel.bottomAnchor, constant: 5),
         ])
+    }
+    func configureView(_ personelInfo: personelInformation){
+        userFullNameLabel.text = personelInfo.fullName
+        userAgeAndGenderLabel.text = personelInfo.userAgeAndGender
+        userBirthDateLabel.text = personelInfo.userBirthDate
     }
     
 }
