@@ -27,20 +27,29 @@ class MainViewModel {
         }
     }
     private func saveUsersToRealm(_ users: [Person]){
-        let realm = try! Realm()
-        let realmModel = RealmModel(users: users)
-        try! realm.write {
-            realm.add(realmModel)
+        do{
+            let realm = try Realm()
+            let realmModel = RealmModel(users: users)
+            try! realm.write {
+                realm.add(realmModel)
+            }
+        }
+        catch{
+            delegate?.fetchError("Realm Failed")
         }
     }
     
     private func getUsersFromRealm() {
-        let realm = try! Realm()
-        if let todos = realm.objects(RealmModel.self).first{
-            for i in todos.users{
-                userList.append(i.toNoneRealmObject())
+        do{
+            let realm = try Realm()
+            if let result = realm.objects(RealmModel.self).first{
+                for i in result.users{
+                    userList.append(i.toNoneRealmObject())
+                }
+                delegate?.updateUiWithUsers(userList)
             }
-            delegate?.updateUiWithUsers(userList)
+        }catch{
+            delegate?.fetchError("Realm Failed")
         }
     }
 }
